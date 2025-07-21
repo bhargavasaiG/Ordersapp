@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Navbar with Three Dot Menu</title>
+    <link rel="stylesheet" href="f.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="kebab-menu" id="kebab-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-list">
+          <a href="#" data-screen="items">Items</a>
+          <a href="#" data-screen="received">Received</a>
+          <a href="#" data-screen="sent">Sent</a>
+          <a href="#" data-screen="linked">Lined</a>
+          <a href="#" data-screen="payables">Payables</a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="items" class="screen active">
+      <h3>Item</h3>
+      <div class="horizontal-group">
+        <div class="dropdown">
+          <button class="dropbtn">Choose an item</button>
+          <div class="dropdown-content">
+            <a href="#" data-value="received">Received</a>
+            <a href="#" data-value="sent">Sent</a>
+            <a href="#" data-value="payables">Payables</a>
+          </div>
+        </div>  
+        <input type="text" placeholder="Email" class="email-input" />
+      </div>
+    
+      <p id="selected-item">No item selected</p>
+    </section>
+    
+    <section id="received" class="screen">
+      <div class="filter-container">
+        <!-- Left side dropdowns -->
+        <div class="left-dropdowns">
+          <div class="dropdown-group">
+            <label for="dropdown1">Show</label>
+            <select id="dropdown1" name="dropdown1">
+              <option value="">Select 1</option>
+              <option value="value1">Value 1</option>
+              <option value="value2">Value 2</option>
+            </select>
+          </div>
+          <div class="dropdown-group">
+            <label for="dropdown2">Customers</label>
+            <select id="dropdown2" name="dropdown2">
+              <option value="">Select 2</option>
+              <option value="valueA">Value A</option>
+              <option value="valueB">Value B</option>
+            </select>
+          </div>
+        </div>
+    
+        <!-- Right side date inputs -->
+        <div class="right-dates">
+          <div class="date-group">
+            <label for="from-date">From Date</label>
+            <input type="date" id="from-date" name="from-date" />
+          </div>
+          <div class="date-group">
+            <label for="to-date">To Date</label>
+            <input type="date" id="to-date" name="to-date" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="sent" class="screen">
+        <div class="filter-container">
+          <!-- Left side dropdowns -->
+          <div class="left-dropdowns">
+            <div class="dropdown-group">
+              <label for="dropdown1">Show</label>
+              <select id="dropdown1" name="dropdown1">
+                <option value="">Select 1</option>
+                <option value="value1">Value 1</option>
+                <option value="value2">Value 2</option>
+              </select>
+            </div>
+            <div class="dropdown-group">
+              <label for="dropdown2">Suppliers</label>
+              <select id="dropdown2" name="dropdown2">
+                <option value="">Select 2</option>
+                <option value="valueA">Value A</option>
+                <option value="valueB">Value B</option>
+              </select>
+            </div>
+          </div>
+      
+          <!-- Right side date inputs -->
+          <div class="right-dates">
+            <div class="date-group">
+              <label for="from-date">From Date</label>
+              <input type="date" id="from-date" name="from-date" />
+            </div>
+            <div class="date-group">
+              <label for="to-date">To Date</label>
+              <input type="date" id="to-date" name="to-date" />
+            </div>
+          </div>
+        </div>
+          
+    </section>
+    <section id="linked" class="screen">
+      <div class="search-container">
+        <div class="search-box">
+          <label for="search1">Firm Name</label>
+          <input type="search" id="search1" name="search1" placeholder="Search..." />
+        </div>
+        <div class="search-box">
+          <label for="search2">Area/City</label>
+          <input type="search" id="search2" name="search2" placeholder="Search..." />
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="payables" class="screen">
+      <div class="search-container">
+        <div class="search-box">
+          <label for="search1">Firm Name</label>
+          <input type="search" id="search1" name="search1" placeholder="Search..." />
+        </div>
+        <div class="search-box">
+          <label for="search2">Area/City</label>
+          <input type="search" id="search2" name="search2" placeholder="Search..." />
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="f.js"></script>
+</body>
+</html>

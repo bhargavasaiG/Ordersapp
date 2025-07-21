@@ -1,0 +1,332 @@
+body {
+  background-color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #1f6662 0%, #24888b 30%, #30aacf 100%);
+}
+
+nav {
+  width: 100%;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0 40px 0 0;
+  transition: max-height 0.3s;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+nav a:hover, nav a.active {
+  background-color: #1f6662;
+  color: #fff;
+}
+
+/* Three dot (kebab) menu styles */
+.kebab-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.kebab-menu span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    height: auto;
+  }
+  .kebab-menu {
+    display: flex;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    background: linear-gradient(to right, #1f6662 0%, #24888b 30%, #30aacf 100%);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 180px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  nav ul.open {
+    max-height: 500px;
+    padding: 10px 0;
+  }
+}
+
+/* Screens styling */
+.screen {
+  display: none;
+  padding: 20px;
+}
+.screen.active {
+  display: block;
+}
+main{
+  height: 800px;
+}
+
+
+/* Your existing dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #24888b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #30aacf;
+  min-width: 160px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color:  #30aacf; /* same as container color, you may adjust */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:  #166d88;
+}
+
+/* New styles to place dropdown + input side by side */
+.horizontal-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.email-input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  min-width: 250px;  /* adjust as needed */
+  transition: border-color 0.3s;
+  outline: none;
+  cursor: text;
+}
+
+.email-input:focus {
+  border-color: #24888b;
+}
+
+/* Responsive: on small screens stack vertically */
+@media (max-width: 480px) {
+  .horizontal-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .email-input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+  }
+}
+
+
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 40px;
+  gap: 40px;
+}
+
+/* Left side: two dropdowns side by side */
+.left-dropdowns {
+  display: flex;
+  gap: 20px;
+}
+
+/* Each dropdown group: label above select */
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f6662;
+}
+
+select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  min-width: 140px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #24888b;
+  outline: none;
+}
+
+/* Right side: from and to date inputs */
+.right-dates {
+  display: flex;
+  gap: 20px;
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f6662;
+}
+
+input[type="date"] {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  min-width: 150px;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+  border-color: #24888b;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-dropdowns,
+  .right-dates {
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+
+.search-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 40px;
+  align-items: flex-end;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* makes each input expand evenly */
+}
+
+.search-box label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f6662;
+}
+
+.search-box input[type="search"] {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  width: 50%;
+  transition: border-color 0.3s;
+  cursor: text;
+}
+
+.search-box input[type="search"]:focus {
+  border-color: #24888b;
+  outline: none;
+}
+
+/* Responsive stack on smaller screens */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+}
+
